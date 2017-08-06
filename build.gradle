@@ -1,0 +1,29 @@
+plugins {
+    id 'com.gradle.build-scan' version '1.8'
+    id 'base'
+}
+
+description = 'Kotlin website'
+group = 'org.domoya.kotlin.website'
+version = '1.0' 
+
+buildScan {
+    licenseAgreementUrl = 'https://gradle.com/terms-of-service'
+    licenseAgree = 'yes'
+}       
+
+task copy(type: Copy) {
+    from 'src'
+    into 'dest'
+}
+
+task zip(type: Zip) {
+    from 'src'
+}
+
+task hello {
+    doLast {
+        println 'Hello, World!'
+    }
+}
+
