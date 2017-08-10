@@ -1,0 +1,24 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "http://dl.bintray.com/kotlin/kotlin-eap"
+        }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:$kotlinFrontendVersion"
+    }
+}
+
+apply plugin: 'kotlin2js'
+apply plugin: 'org.jetbrains.kotlin.frontend'
+
+compileKotlin2Js {
+    kotlinOptions.metaInfo = true
+    kotlinOptions.outputFile = "$project.buildDir.path/js/${project.name}.js"
+    kotlinOptions.sourceMap = true
+    kotlinOptions.moduleKind = 'commonjs'
+    kotlinOptions.main = "call"
+}
