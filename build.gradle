@@ -20,11 +20,18 @@ buildScan {
 apply plugin: 'idea'
 
 description = 'Kotlin website'
-group = 'org.domoya.website'
-version = '1.0'
+
+allprojects {
+    apply plugin: 'kotlin'
+    group = 'org.domoya.website'
+    version = '1.0'
+}
 
 subprojects {
     repositories {
         jcenter()
+    }
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     }
 }

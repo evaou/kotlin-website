@@ -1,4 +1,4 @@
-package org.domoya
+package org.domoya.website
 
 fun main(args: Array<String>) {
     println("Hello Backend!")
