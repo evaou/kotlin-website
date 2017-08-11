@@ -22,3 +22,7 @@ compileKotlin2Js {
     kotlinOptions.moduleKind = 'commonjs'
     kotlinOptions.main = "call"
 }
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlinVersion"
+}

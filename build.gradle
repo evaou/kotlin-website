@@ -2,10 +2,6 @@ buildscript {
     repositories {
         jcenter()
     }
-
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
-    }
 }
 
 plugins {
@@ -19,10 +15,8 @@ buildScan {
 
 apply plugin: 'idea'
 
-description = 'Kotlin website'
-
 allprojects {
-    apply plugin: 'kotlin'
+    description = 'Kotlin website'
     group = 'org.domoya.website'
     version = '1.0'
 }
@@ -30,8 +24,5 @@ allprojects {
 subprojects {
     repositories {
         jcenter()
-    }
-    dependencies {
-        compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     }
 }
